@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hospitalApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlus Hospital | Patient Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- AngularJS 1.8 (legacy educational use) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+</head>
+<body ng-controller="MainController">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">✚ CarePlus Hospital</div>
+        <p>Compassionate Care • Advanced Medicine • Better Health</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="#!/">Home</a>
+        <a href="#!/doctors">Doctors</a>
+        <a href="#!/register">Register</a>
+        <a href="#!/contact">Contact</a>
+    </nav>
+
+    <!-- VIEW -->
+    <main ng-view></main>
+
+    <footer style="text-align:center; padding: 25px; color:#5a7a8a; font-size:14px;">
+        © 2025 CarePlus Hospital • Built with AngularJS for educational purposes
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

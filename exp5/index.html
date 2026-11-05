@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management & Healthcare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Hospital Management & Healthcare</h1>
+
+    <div class="box">
+        <h2>1. Patient Name Analyzer</h2>
+        <input type="text" id="patientName" placeholder="Enter patient name">
+        <button onclick="findWords()">Analyze</button>
+        <p id="wordResult"></p>
+    </div>
+
+    <div class="box">
+        <h2>2. Patient BMI Calculator</h2>
+        <fieldset>
+            Weight (kg):
+            <input type="number" id="weight" placeholder="Enter weight">
+            <br><br>
+
+            Height (m):
+            <input type="number" id="height" step="0.01" placeholder="Enter height">
+            <br><br>
+
+            <button onclick="calculateBMI()">Calculate BMI</button>
+        </fieldset>
+
+        <p>Your BMI is: <span id="score"></span></p>
+        <p>Your body type is: <span id="type"></span></p>
+    </div>
+
+    <div class="box">
+        <h2>3. Hospital Ward Bed Generator</h2>
+
+        <label>Rows:</label>
+        <input type="number" id="rows" min="1" placeholder="Rows">
+
+        <label>Columns:</label>
+        <input type="number" id="columns" min="1" placeholder="Columns">
+
+        <br><br>
+        <button onclick="grow()">Generate Hospital Beds</button>
+
+        <div id="garden"></div>
+    </div>
+
+    <div class="box">
+        <h2>4. Medical Currency Converter</h2>
+
+        <fieldset>
+            Convert
+            <input type="number" id="data" placeholder="Enter amount">
+
+            <select id="from">
+                <option>Indian Rupee</option>
+                <option>US Dollar</option>
+            </select>
+
+            to
+
+            <select id="to">
+                <option>US Dollar</option>
+                <option>Indian Rupee</option>
+            </select>
+
+            <button onclick="convert()">Calculate</button>
+
+            <p>Result: <span id="answer"></span></p>
+        </fieldset>
+    </div>
+
+    <div class="box">
+        <h2>5. Appointment Token Generator</h2>
+
+        <button id="token">Generate Appointment Token</button>
+
+        <p>Appointment Status: <span id="status"></span></p>
+        <p>Confirmed: <span id="confirmed">0</span></p>
+        <p>Waiting: <span id="waiting">0</span></p>
+    </div>
+
+    <div class="box">
+        <h2>6. Healthcare Service Order Form</h2>
+
+        <fieldset>
+            General Consultations:
+            <input type="number" id="small" min="0" placeholder="Quantity">
+            <br><br>
+
+            Specialist Consultations:
+            <input type="number" id="medium" min="0" placeholder="Quantity">
+            <br><br>
+
+            Health Checkups:
+            <input type="number" id="large" min="0" placeholder="Quantity">
+
+            <br><br>
+
+            <label>
+                <input type="radio" value="10" name="tip"> 10%
+            </label>
+
+            <label>
+                <input type="radio" value="15" name="tip" checked> 15%
+            </label>
+
+            <label>
+                <input type="radio" value="20" name="tip"> 20%
+            </label>
+
+            <br><br>
+            <button id="submit">Calculate Order</button>
+        </fieldset>
+
+        <p>Cost of order: ₹<span id="price"></span></p>
+    </div>
+
+</div>
+
+<footer>
+    <p>Hospital Management & Healthcare</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

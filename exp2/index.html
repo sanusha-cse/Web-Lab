@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML5 Showcase | Sanusha</title>
+
+<style>
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f3f0ff;
+    color: #252044;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(120deg, #4c1d95, #7c3aed, #2563eb);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #e9ddff;
+    font-size: 16px;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: #24134d;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #c4b5fd;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 30px auto;
+}
+
+/* COMMON CARDS */
+
+.card {
+    background: white;
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(76,29,149,0.09);
+    border: 1px solid #e5dcff;
+}
+
+.card h2 {
+    color: #6d28d9;
+    margin-bottom: 16px;
+    font-size: 23px;
+    border-left: 5px solid #8b5cf6;
+    padding-left: 12px;
+}
+
+/* ABOUT SECTION */
+
+.about p {
+    color: #55516c;
+    font-size: 16px;
+}
+
+/* IMAGE SECTION */
+
+.image-box {
+    text-align: center;
+}
+
+.image-box img {
+    width: 300px;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid #ddd6fe;
+    box-shadow: 0 5px 15px #ddd6fe;
+}
+
+.image-box p {
+    margin-top: 10px;
+    color: #777;
+}
+
+/* LINKS */
+
+.website-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(120deg, #7c3aed, #2563eb);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.website-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px #c4b5fd;
+}
+
+/* TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th {
+    background: #6d28d9;
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #e5e0f5;
+}
+
+tr:nth-child(even) {
+    background: #f3efff;
+}
+
+tr:hover {
+    background: #e9ddff;
+}
+
+/* FORM */
+
+form {
+    color: #39334f;
+}
+
+fieldset {
+    border: 2px solid #c4b5fd;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+legend {
+    color: #6d28d9;
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+label {
+    display: inline-block;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]):not([type="reset"]),
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d5c9ef;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    background: #faf9ff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 5px #c4b5fd;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #7c3aed;
+    margin: 8px;
+}
+
+input[type="range"] {
+    accent-color: #7c3aed;
+    width: 100%;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 8px 0 0;
+}
+
+input[type="submit"] {
+    background: #7c3aed;
+}
+
+input[type="reset"] {
+    background: #64748b;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    opacity: 0.8;
+}
+
+progress {
+    width: 100%;
+    height: 16px;
+    accent-color: #7c3aed;
+}
+
+/* MEDIA SECTION */
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.media-box {
+    background: #f5f2ff;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.media-box h3 {
+    color: #6d28d9;
+    margin-bottom: 12px;
+}
+
+audio, video {
+    width: 100%;
+    max-width: 400px;
+}
+
+iframe, embed {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* DOWNLOAD */
+
+.download-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+/* FOOTER */
+
+footer {
+    background: #24134d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer span {
+    color: #c4b5fd;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 650px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+@media print {
+    nav {
+        position: static;
+    }
+
+    body {
+        background: white;
+    }
+
+    .card {
+        box-shadow: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <h1>🌐 My HTML5 Showcase Page</h1>
+    <p>Explore HTML5 Forms, Multimedia and Web Elements</p>
+    <p>Designed by R. Sanusha | UTK24CS1001</p>
+</header>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#image">Image</a>
+    <a href="#table">Table</a>
+    <a href="#form">Registration</a>
+    <a href="#media">Media</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<!-- ABOUT SECTION -->
+
+<section class="card about" id="about">
+
+    <h2>👋 About This Page</h2>
+
+    <p>
+        Welcome to my HTML5 Showcase Page! This webpage
+        demonstrates the powerful features of HTML5.
+        It includes images, hyperlinks, tables, registration
+        forms, audio, video, embedded documents and webpages.
+        The main objective is to understand how HTML5 elements
+        improve website design, multimedia presentation and
+        user interaction.
+    </p>
+
+</section>
+
+<!-- IMAGE SECTION -->
+
+<section class="card image-box" id="image">
+
+    <h2>🖼️ Image Gallery</h2>
+
+    <img
+    src="images.jpeg"
+    alt="Beautiful sports car">
+
+    <p>Example of an image displayed using the HTML5 img element.</p>
+
+</section>
+
+<!-- HYPERLINK SECTION -->
+
+<section class="card" id="contact">
+
+    <h2>🔗 Useful Website</h2>
+
+    <p>Click below to explore HTML and web development tutorials.</p>
+
+    <br>
+
+    <a class="website-link"
+    href="https://www.w3schools.com"
+    target="_blank">
+    Visit W3Schools →
+    </a>
+
+</section>
+
+<!-- TABLE SECTION -->
+
+<section class="card" id="table">
+
+    <h2>📋 HTML5 Elements Table</h2>
+
+    <table>
+
+        <tr>
+            <th>HTML Element</th>
+            <th>Category</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>&lt;img&gt;</td>
+            <td>Media</td>
+            <td>Displays images</td>
+        </tr>
+
+        <tr>
+            <td>&lt;table&gt;</td>
+            <td>Data</td>
+            <td>Displays tabular data</td>
+        </tr>
+
+        <tr>
+            <td>&lt;form&gt;</td>
+            <td>Input</td>
+            <td>Collects user information</td>
+        </tr>
+
+        <tr>
+            <td>&lt;audio&gt;</td>
+            <td>Media</td>
+            <td>Plays audio files</td>
+        </tr>
+
+        <tr>
+            <td>&lt;video&gt;</td>
+            <td>Media</td>
+            <td>Plays video files</td>
+        </tr>
+
+        <tr>
+            <td>&lt;iframe&gt;</td>
+            <td>Embedding</td>
+            <td>Displays external content</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<!-- REGISTRATION FORM -->
+
+<section class="card" id="form">
+
+    <h2>📝 Student Registration Form</h2>
+
+    <form>
+
+        <fieldset>
+
+            <legend>Personal Information</legend>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name"
+            placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email"
+            placeholder="example@gmail.com" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone"
+            placeholder="Enter phone number"
+            pattern="[0-9]{10}">
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+            minlength="8" placeholder="Minimum 8 characters" required>
+
+            <label>Gender</label><br>
+
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+
+            <br><br>
+
+            <label>Technical Skills</label><br>
+
+            <input type="checkbox" id="html" value="HTML">
+            <label for="html">HTML</label>
+
+            <input type="checkbox" id="css" value="CSS">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" id="js" value="JavaScript">
+            <label for="js">JavaScript</label>
+
+            <br><br>
+
+            <label for="course">Select Course</label>
+
+            <select id="course">
+                <option value="">Choose a course</option>
+                <option>B.Tech</option>
+                <option>BCA</option>
+                <option>MCA</option>
+                <option>B.Sc Computer Science</option>
+            </select>
+
+            <label for="range">Technical Skill Level</label>
+            <input type="range" id="range" min="0" max="100" value="70">
+
+            <label for="file">Upload Resume</label>
+            <input type="file" id="file" accept=".pdf,.doc,.docx">
+
+            <label for="message">About Yourself</label>
+            <textarea id="message" rows="4"
+            placeholder="Write a short introduction"></textarea>
+
+        </fieldset>
+
+        <br>
+
+        <label>Course Progress</label>
+        <progress value="70" max="100"></progress>
+
+        <br>
+
+        <input type="submit" value="Submit Registration">
+        <input type="reset" value="Reset Form">
+
+    </form>
+
+</section>
+
+<!-- AUDIO AND VIDEO -->
+
+<section class="card" id="media">
+
+    <h2>🎬 Multimedia Gallery</h2>
+
+    <div class="media-grid">
+
+        <div class="media-box">
+
+            <h3>🎵 Audio Player</h3>
+
+            <audio controls>
+                <source src="whatsapp-audio-2020-10-24-at-3-09-25-pm-online-audio-converter-com-51698.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+            <p>HTML5 audio element.</p>
+
+        </div>
+
+        <div class="media-box">
+
+            <h3>🎥 Video Player</h3>
+
+            <video controls poster="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600">
+                <source src="Shocking style shock wave 5 seconds countdown video __ #CountdownVideo.mp4" type="video/mp4">
+                
+            </video>
+
+            <p>HTML5 video element.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DOWNLOAD SECTION -->
+
+<section class="card">
+
+    <h2>📥 Download Document</h2>
+
+    <p>Click the button below to download the sample PDF document.</p>
+
+    <br>
+
+    <p style="color:#666;"><em>Sample PDF not included in this demo package.</em></p>
+    <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank" class="download-btn">
+        Download Sample PDF ↓
+    </a>
+
+</section>
+
+<!-- EMBED SECTION -->
+
+<section class="card">
+
+    <h2>📄 Embedded PDF Document</h2>
+
+    <p style="color:#666; margin-bottom:12px;"><em>Local sample.pdf not available — showing a public sample PDF instead.</em></p>
+    <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    type="application/pdf" width="100%" height="400">
+
+</section>
+
+<!-- IFRAME SECTION -->
+
+<section class="card">
+
+    <h2>🌍 Embedded Website</h2>
+
+    <p>Explore Wikipedia through an embedded webpage.</p>
+
+    <br>
+
+    <iframe
+    src="https://www.wikipedia.org"
+    title="Wikipedia Website">
+    </iframe>
+
+</section>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>HTML5 Showcase Page</h3>
+
+    <p>Created by <span>R. Sanusha</span></p>
+
+    <p>23CS2049 – Web Technology Lab | UTK24CS1001</p>
+
+    <p>© 2026 All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

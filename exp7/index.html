@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Body Workshop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<div class="workshop">
+
+    <!-- HEADER -->
+    <header class="heading">
+        <div class="brand">🚘 AUTO<span>CRAFT</span></div>
+        <h1>Car Body Workshop</h1>
+        <p>Design Your Dream Car – Customize Every Detail</p>
+        <span class="tag">AUTOMOBILE CUSTOMIZATION STUDIO</span>
+    </header>
+
+    <div class="content">
+
+        <!-- CAR PREVIEW -->
+        <section class="preview">
+            <div class="preview-heading">
+                <h2>🚗 Your Car Preview</h2>
+                <span class="live">● LIVE PREVIEW</span>
+            </div>
+
+            <div class="car-area">
+                <div class="car">
+
+                    <div class="roof"></div>
+                    <div class="glass"></div>
+                    <div class="window-line"></div>
+                    <div class="car-body"></div>
+
+                    <div class="headlight"></div>
+                    <div class="taillight"></div>
+
+                    <div class="wheel left">
+                        <div class="rim"></div>
+                    </div>
+
+                    <div class="wheel right">
+                        <div class="rim"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="preview-footer">
+                <span>✨ Premium Custom Design</span>
+                <span>SPORTS EDITION</span>
+            </div>
+        </section>
+
+        <!-- CUSTOMIZATION PANEL -->
+        <section class="controls">
+
+            <div class="control-heading">
+                <h2>⚙ Customization Studio</h2>
+                <p>Choose your preferred car settings</p>
+            </div>
+
+            <!-- CAR COLOR -->
+            <div class="control-group">
+                <h3>🎨 Car Body Color</h3>
+
+                <div class="buttons">
+                    <button id="red" class="color-btn red">Red</button>
+                    <button id="blue" class="color-btn blue">Blue</button>
+                    <button id="black" class="color-btn black">Black</button>
+                    <button id="green" class="color-btn green">Green</button>
+                    <button id="yellow" class="color-btn yellow">Yellow</button>
+                </div>
+            </div>
+
+            <!-- GLASS TINT -->
+            <div class="control-group">
+                <h3>🪟 Glass Tint</h3>
+
+                <div class="buttons">
+                    <button id="lightGlass" class="glass-btn light">Light</button>
+                    <button id="darkGlass" class="glass-btn dark">Dark</button>
+                    <button id="blueGlass" class="glass-btn glass-blue">Blue</button>
+                </div>
+            </div>
+
+            <!-- TYRE SIZE -->
+            <div class="control-group">
+                <h3>⚙ Tyre Size</h3>
+
+                <div class="buttons">
+                    <button id="smallTyre" class="tyre-btn">Small</button>
+                    <button id="mediumTyre" class="tyre-btn">Medium</button>
+                    <button id="largeTyre" class="tyre-btn">Large</button>
+                </div>
+            </div>
+
+            <!-- STATUS -->
+            <div class="status" id="status">
+                <span>●</span> Ready to Customize Your Car!
+            </div>
+
+            <!-- RESET -->
+            <button id="reset" class="reset-btn">
+                ↺ Reset Customization
+            </button>
+
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 AUTOCRAFT | Car Body Workshop</p>
+        <p>Powered by HTML, CSS & jQuery</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

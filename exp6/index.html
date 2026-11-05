@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediEmergency Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">✚ Medi<span>Emergency</span></div>
+
+        <nav>
+            <a class="active" href="#">▦ Dashboard</a>
+            <a href="#emergency">🚨 Emergency</a>
+            <a href="#ambulance">🚑 Ambulance</a>
+            <a href="#staff">👨‍⚕️ Medical Staff</a>
+            <a href="#patients">🧑 Patients</a>
+            <a href="#contacts">☎ Contacts</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>System Status</p>
+            <span class="online">● All Systems Online</span>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header>
+            <div>
+                <h1>Good Evening 👋</h1>
+                <p>Welcome to your MediEmergency dashboard</p>
+            </div>
+
+            <div class="header-right">
+                <div class="clock" id="time">00:00:00</div>
+                <div class="profile">
+                    <div class="profile-icon">👨‍💼</div>
+                    <div>
+                        <b>Emergency Admin</b>
+                        <small>Control Center</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- EMERGENCY ALERT -->
+        <section class="alert" id="emergency">
+            <div class="alert-icon">🚨</div>
+            <div>
+                <h3>Emergency Response System</h3>
+                <p>All emergency services are currently available.</p>
+            </div>
+            <button class="danger-btn" onclick="emergencyAlert()">
+                EMERGENCY
+            </button>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="card">
+                <div class="card-icon blue">🚑</div>
+                <div>
+                    <p>Available Ambulances</p>
+                    <h2>12</h2>
+                    <span class="success">● 8 Ready Now</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon green">👨‍⚕️</div>
+                <div>
+                    <p>Medical Staff</p>
+                    <h2>28</h2>
+                    <span class="success">● 21 Available</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon orange">🚨</div>
+                <div>
+                    <p>Active Emergencies</p>
+                    <h2 id="emergencyCount">04</h2>
+                    <span class="warning">● Requires Attention</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon purple">🏥</div>
+                <div>
+                    <p>Hospitals Connected</p>
+                    <h2>16</h2>
+                    <span class="success">● Network Active</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD GRID -->
+        <section class="dashboard-grid">
+
+            <!-- AMBULANCE TRACKING -->
+            <div class="panel" id="ambulance">
+                <div class="panel-title">
+                    <div>
+                        <h2>🚑 Ambulance Tracking</h2>
+                        <p>Live emergency vehicle status</p>
+                    </div>
+                    <span class="badge">LIVE</span>
+                </div>
+
+                <div class="ambulance-box">
+                    <div class="road">
+                        <div class="ambulance" id="ambulanceIcon">🚑</div>
+                    </div>
+
+                    <div class="location">
+                        <span>City Hospital</span>
+                        <span>→</span>
+                        <span>Emergency Zone</span>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="primary" onclick="moveRight()">
+                        ▶ Move Ambulance
+                    </button>
+                    <button class="secondary" onclick="stop()">
+                        ■ Stop
+                    </button>
+                    <button class="secondary" onclick="resetAmbulance()">
+                        ↺ Reset
+                    </button>
+                </div>
+                <p class="movement-status" id="movementStatus">Status: Ready</p>
+            </div>
+
+            <!-- EMERGENCY CONTACTS -->
+            <div class="panel" id="contacts">
+                <div class="panel-title">
+                    <div>
+                        <h2>☎ Emergency Contacts</h2>
+                        <p>Quick access numbers</p>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <div class="contact-icon">🚑</div>
+                    <div>
+                        <b>Ambulance</b>
+                        <small>Emergency Transport</small>
+                    </div>
+                    <strong>108</strong>
+                </div>
+
+                <div class="contact">
+                    <div class="contact-icon">🏥</div>
+                    <div>
+                        <b>Emergency Room</b>
+                        <small>Hospital Emergency</small>
+                    </div>
+                    <strong>102</strong>
+                </div>
+
+                <div class="contact">
+                    <div class="contact-icon">👮</div>
+                    <div>
+                        <b>Police</b>
+                        <small>Emergency Assistance</small>
+                    </div>
+                    <strong>100</strong>
+                </div>
+            </div>
+
+            <!-- MEDICAL STAFF -->
+            <div class="panel" id="staff">
+                <div class="panel-title">
+                    <div>
+                        <h2>👨‍⚕️ Medical Staff</h2>
+                        <p>Available emergency staff</p>
+                    </div>
+                    <button class="view-btn">View All</button>
+                </div>
+
+                <div class="staff-person">
+                    <div class="avatar">👨‍⚕️</div>
+                    <div>
+                        <b>Dr. John</b>
+                        <small>Emergency Physician</small>
+                    </div>
+                    <span class="available">Available</span>
+                </div>
+
+                <div class="staff-person">
+                    <div class="avatar">👩‍⚕️</div>
+                    <div>
+                        <b>Dr. Priya</b>
+                        <small>Cardiologist</small>
+                    </div>
+                    <span class="available">Available</span>
+                </div>
+
+                <div class="staff-person">
+                    <div class="avatar">👨‍⚕️</div>
+                    <div>
+                        <b>Dr. Joseph</b>
+                        <small>Emergency Nurse</small>
+                    </div>
+                    <span class="busy">Busy</span>
+                </div>
+            </div>
+
+            <!-- RECENT ALERTS -->
+            <div class="panel">
+                <div class="panel-title">
+                    <div>
+                        <h2>🔔 Recent Alerts</h2>
+                        <p>Latest emergency notifications</p>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <span class="notification-icon red">!</span>
+                    <div>
+                        <b>Emergency Request #104</b>
+                        <small>Ambulance dispatched</small>
+                    </div>
+                    <time>2 min</time>
+                </div>
+
+                <div class="notification">
+                    <span class="notification-icon green">✓</span>
+                    <div>
+                        <b>Ambulance AMB-12</b>
+                        <small>Reached destination</small>
+                    </div>
+                    <time>8 min</time>
+                </div>
+
+                <div class="notification">
+                    <span class="notification-icon blue">+</span>
+                    <div>
+                        <b>Medical Staff Update</b>
+                        <small>Dr. Priya is available</small>
+                    </div>
+                    <time>15 min</time>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>© 2026 MediEmergency</span>
+            <span>Emergency Medical Assistance System</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

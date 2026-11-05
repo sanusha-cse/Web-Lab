@@ -1,0 +1,161 @@
+
+<div class="container">
+
+    <h2>Patient Registration Form</h2>
+
+    <p>Please enter your details to register with CarePlus Hospital.</p>
+
+    <form name="patientForm"
+          ng-submit="registerPatient(patientForm)"
+          novalidate>
+
+        <label>Patient Name</label>
+        <input type="text"
+               name="name"
+               ng-model="patient.name"
+               ng-required="true"
+               ng-minlength="3"
+               ng-pattern="/^[a-zA-Z ]+$/"
+               placeholder="Enter your full name">
+
+        <p class="error"
+           ng-show="patientForm.name.$touched && patientForm.name.$error.required">
+            Patient name is required.
+        </p>
+
+        <p class="error"
+           ng-show="patientForm.name.$touched &&
+           (patientForm.name.$error.minlength || patientForm.name.$error.pattern)">
+            Enter a valid name with at least 3 letters.
+        </p>
+
+        <label>Password</label>
+        <input type="password"
+               name="password"
+               ng-model="patient.password"
+               ng-required="true"
+               ng-minlength="8"
+               placeholder="Minimum 8 characters">
+
+        <p class="error"
+           ng-show="patientForm.password.$touched && patientForm.password.$error.required">
+            Password is required.
+        </p>
+
+        <p class="error"
+           ng-show="patientForm.password.$touched && patientForm.password.$error.minlength">
+            Password must contain at least 8 characters.
+        </p>
+
+        <label>Age</label>
+        <input type="number"
+               name="age"
+               ng-model="patient.age"
+               ng-required="true"
+               min="1"
+               max="120"
+               placeholder="Enter your age">
+
+        <p class="error"
+           ng-show="patientForm.age.$touched && patientForm.age.$invalid">
+            Enter a valid age between 1 and 120.
+        </p>
+
+        <label>Mobile Number</label>
+        <input type="text"
+               name="mobile"
+               ng-model="patient.mobile"
+               ng-required="true"
+               ng-pattern="/^[0-9]{10}$/"
+               placeholder="Enter 10-digit mobile number">
+
+        <p class="error"
+           ng-show="patientForm.mobile.$touched && patientForm.mobile.$invalid">
+            Enter a valid 10-digit mobile number.
+        </p>
+
+        <label>Email Address</label>
+        <input type="email"
+               name="email"
+               ng-model="patient.email"
+               ng-required="true"
+               placeholder="example@gmail.com">
+
+        <p class="error"
+           ng-show="patientForm.email.$touched && patientForm.email.$invalid">
+            Enter a valid email address.
+        </p>
+
+        <label>Gender</label>
+
+        <div>
+            <label class="gender-option">
+                <input type="radio"
+                       name="gender"
+                       ng-model="patient.gender"
+                       value="Male"
+                       required>
+                Male
+            </label>
+
+            <label class="gender-option">
+                <input type="radio"
+                       name="gender"
+                       ng-model="patient.gender"
+                       value="Female"
+                       required>
+                Female
+            </label>
+
+            <label class="gender-option">
+                <input type="radio"
+                       name="gender"
+                       ng-model="patient.gender"
+                       value="Other"
+                       required>
+                Other
+            </label>
+        </div>
+
+        <p class="error"
+           ng-show="patientForm.gender.$touched && patientForm.gender.$error.required">
+            Please select your gender.
+        </p>
+
+        <label>State</label>
+        <select name="state"
+                ng-model="patient.state"
+                ng-required="true">
+
+            <option value="">Select your state</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Maharashtra">Maharashtra</option>
+        </select>
+
+        <p class="error"
+           ng-show="patientForm.state.$touched && patientForm.state.$error.required">
+            Please select your state.
+        </p>
+
+        <button type="submit"
+                ng-disabled="patientForm.$invalid">
+            Register Patient
+        </button>
+
+    </form>
+
+    <div class="success" ng-if="registered">
+        <h3>Registration Successful!</h3>
+        <p>Patient Name: {{registeredPatient.name}}</p>
+        <p>Email: {{registeredPatient.email}}</p>
+        <p>Mobile: {{registeredPatient.mobile}}</p>
+        <p>Gender: {{registeredPatient.gender}}</p>
+        <p>Age: {{registeredPatient.age}}</p>
+        <p>State: {{registeredPatient.state}}</p>
+    </div>
+
+</div>

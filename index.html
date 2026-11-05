@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology Lab | Combined Projects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.25), transparent 70%);
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            background: linear-gradient(120deg, #a5b4fc, #c4b5fd, #f0abfc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(129, 140, 248, 0.4);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: #c7d2fe;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 80px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 18px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(129, 140, 248, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .card .num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #818cf8;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: linear-gradient(120deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            width: fit-content;
+        }
+
+        .card a:hover {
+            filter: brightness(1.15);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .tech span {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-radius: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Technology Lab Projects</h1>
+        <p>A combined collection of HTML, CSS, JavaScript, jQuery &amp; AngularJS experiments — ready for GitHub Pages.</p>
+        <div class="badge">9 Experiments • Fully Deployable</div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+
+            <article class="card">
+                <div class="num">EXP 01</div>
+                <h2>Personal Portfolio</h2>
+                <p>Modern dark-themed personal portfolio website with smooth scrolling navigation and sections for about, skills, projects and contact.</p>
+                <div class="tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Responsive</span>
+                </div>
+                <a href="exp1/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 02</div>
+                <h2>HTML5 Showcase</h2>
+                <p>Complete demonstration of HTML5 semantic elements, forms, media (audio/video), tables, embeds and iframe usage.</p>
+                <div class="tech">
+                    <span>HTML5</span>
+                    <span>Media</span>
+                    <span>Forms</span>
+                </div>
+                <a href="exp2/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 03</div>
+                <h2>Responsive Web Tech Site</h2>
+                <p>Clean responsive website introducing HTML5 &amp; CSS3 technologies with navigation, feature cards and contact section.</p>
+                <div class="tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Responsive</span>
+                </div>
+                <a href="exp3/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 04</div>
+                <h2>FitZone Fitness</h2>
+                <p>Fitness training website with hero section, about, training programs and a working join form with JavaScript validation feedback.</p>
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="exp4/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 05</div>
+                <h2>Hospital Management Tools</h2>
+                <p>Interactive JavaScript utilities for patient name analysis, string operations and basic hospital data handling tools.</p>
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="exp5/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 06</div>
+                <h2>MediEmergency Dashboard</h2>
+                <p>Emergency medical dashboard UI with sidebar navigation for emergency, ambulance and medical staff sections.</p>
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="exp6/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 07</div>
+                <h2>Car Body Workshop</h2>
+                <p>Interactive car customization studio using jQuery. Change colors, styles and preview your dream car design live.</p>
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>jQuery</span>
+                </div>
+                <a href="exp7/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 08</div>
+                <h2>Student Registration</h2>
+                <p>AngularJS student registration form with validation, two-way data binding and a modern purple-themed UI.</p>
+                <div class="tech">
+                    <span>AngularJS</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+                <a href="exp8/">Open Project →</a>
+            </article>
+
+            <article class="card">
+                <div class="num">EXP 09</div>
+                <h2>CarePlus Hospital Portal</h2>
+                <p>Full AngularJS single-page application with routing for Home, Doctors, Patient Registration and Contact pages.</p>
+                <div class="tech">
+                    <span>AngularJS</span>
+                    <span>ngRoute</span>
+                    <span>SPA</span>
+                </div>
+                <a href="exp9/">Open Project →</a>
+            </article>
+
+        </div>
+    </div>
+
+    <footer>
+        Combined &amp; prepared for <strong>GitHub Pages</strong> deployment.<br>
+        Place this folder as the root of your repository (or <code>docs/</code> folder) and enable Pages.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanusha | Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 10%;
+            background: #111c33;
+        }
+
+        nav h2 {
+            color: #a78bfa;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 480px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 65px 12%;
+            background: linear-gradient(120deg, #1e1b4b, #312e81, #0f172a);
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #c4b5fd;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .tag {
+            color: #c4b5fd;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .hero img {
+            width: 230px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid #a78bfa;
+            box-shadow: 0 0 30px #8b5cf6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #8b5cf6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #6d28d9;
+        }
+
+        /* Common Sections */
+        section {
+            padding: 65px 12%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 30px;
+            color: #c4b5fd;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            color: #cbd5e1;
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        /* Hobbies */
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #1e293b;
+            width: 190px;
+            padding: 30px 15px;
+            border-radius: 15px;
+            border: 1px solid #475569;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #a78bfa;
+            box-shadow: 0 5px 20px #312e81;
+        }
+
+        .card h3 {
+            margin-top: 12px;
+            color: #ddd6fe;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            margin-top: 8px;
+        }
+
+        .emoji {
+            font-size: 35px;
+        }
+
+        /* Skills */
+        .skills {
+            background: #172036;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .skill-list span {
+            background: #312e81;
+            padding: 12px 25px;
+            border-radius: 25px;
+            color: #ede9fe;
+        }
+
+        /* Contact */
+        .contact p {
+            color: #cbd5e1;
+            line-height: 2;
+        }
+
+        .contact a {
+            color: #c4b5fd;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #111c33;
+            text-align: center;
+            padding: 22px;
+            color: #94a3b8;
+        }
+
+        @media(max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 45px 7%;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            section {
+                padding: 45px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Sanusha.</h2>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div class="hero" id="home">
+
+        <div class="hero-text">
+            <p class="tag">WELCOME TO MY WEBSITE</p>
+
+            <h1>Hello, I'm <span>R. Sanusha</span></h1>
+
+            <p>
+                A Computer Science Engineering student
+                passionate about technology, programming,
+                creativity and innovation. I enjoy learning
+                new things and developing my technical skills.
+                My goal is to become a successful software engineer.
+            </p>
+
+            <a href="#about" class="btn">Explore More</a>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500"
+             alt="Profile Photo">
+
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am pursuing B.Tech in Computer Science and Engineering
+            at Karunya Institute of Technology and Sciences.
+            I am interested in Artificial Intelligence, Web Development
+            and Software Engineering. I enjoy exploring new technologies,
+            solving programming problems and working on creative projects.
+            I always believe that learning is a continuous journey.
+        </p>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <h2>My Hobbies</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="emoji">💻</div>
+                <h3>Programming</h3>
+                <p>Learning new coding concepts.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🎵</div>
+                <h3>Music</h3>
+                <p>Listening to my favourite songs.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">📚</div>
+                <h3>Reading</h3>
+                <p>Reading books and gaining knowledge.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🏸</div>
+                <h3>Badminton</h3>
+                <p>Playing outdoor games.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🎬</div>
+                <h3>Technology</h3>
+                <p>Watching technology videos.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Python</span>
+            <span>Java</span>
+            <span>SQL</span>
+            <span>Artificial Intelligence</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Connect With Me</h2>
+
+        <p>
+            Thank you for visiting my personal webpage!
+        </p>
+
+        <p>
+            Explore more:
+            <a href="https://www.google.com" target="_blank">
+                Google
+            </a>
+            |
+            <a href="https://www.linkedin.com" target="_blank">
+                LinkedIn
+            </a>
+            |
+            <a href="https://github.com" target="_blank">
+                GitHub
+            </a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 R. Sanusha | My Personal Website</p>
+        <p>Designed with ❤️ using HTML and CSS</p>
+    </footer>
+
+</body>
+</html>

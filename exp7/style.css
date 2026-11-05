@@ -1,0 +1,435 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #101827, #243b55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* MAIN WORKSHOP */
+
+.workshop {
+    width: 1000px;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* HEADER */
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand {
+    color: #243b55;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.brand span {
+    color: #e63946;
+}
+
+.heading h1 {
+    font-size: 34px;
+    color: #172b45;
+    margin-bottom: 8px;
+}
+
+.heading p {
+    color: #7c8797;
+    margin-bottom: 12px;
+}
+
+.tag {
+    display: inline-block;
+    background: #eaf1fc;
+    color: #1769e0;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* MAIN CONTENT */
+
+.content {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 25px;
+}
+
+/* PREVIEW */
+
+.preview {
+    background: #f1f4f9;
+    padding: 22px;
+    border-radius: 18px;
+}
+
+.preview-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.preview-heading h2 {
+    color: #243b55;
+    font-size: 18px;
+}
+
+.live {
+    color: #159b67;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* CAR AREA */
+
+.car-area {
+    min-height: 330px;
+    background: linear-gradient(180deg, #dce8f5, #ffffff);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.car {
+    position: relative;
+    width: 360px;
+    height: 190px;
+    flex-shrink: 0;
+}
+
+/* CAR BODY */
+
+.car-body {
+    position: absolute;
+    width: 310px;
+    height: 80px;
+    background: #e63946;
+    border-radius: 35px 55px 18px 18px;
+    left: 25px;
+    top: 75px;
+    transition: 0.4s;
+    box-shadow: inset 0 -9px 0 rgba(0,0,0,0.12);
+}
+
+/* ROOF */
+
+.roof {
+    position: absolute;
+    width: 190px;
+    height: 75px;
+    background: #e63946;
+    left: 85px;
+    top: 25px;
+    border-radius: 90px 90px 5px 5px;
+    transition: 0.4s;
+}
+
+/* GLASS */
+
+.glass {
+    position: absolute;
+    width: 155px;
+    height: 48px;
+    left: 103px;
+    top: 38px;
+    background: #9be7ff;
+    border-radius: 55px 55px 5px 5px;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+.window-line {
+    position: absolute;
+    height: 43px;
+    width: 3px;
+    background: rgba(0,0,0,0.35);
+    left: 180px;
+    top: 40px;
+    z-index: 3;
+}
+
+/* LIGHTS */
+
+.headlight {
+    position: absolute;
+    width: 18px;
+    height: 13px;
+    background: #fff5ad;
+    border-radius: 50%;
+    right: 20px;
+    top: 105px;
+    z-index: 3;
+}
+
+.taillight {
+    position: absolute;
+    width: 13px;
+    height: 17px;
+    background: #ff3434;
+    border-radius: 5px;
+    left: 25px;
+    top: 105px;
+    z-index: 3;
+}
+
+/* WHEELS */
+
+.wheel {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: #222;
+    border: 8px solid #555;
+    border-radius: 50%;
+    top: 130px;
+    z-index: 4;
+    transition: width 0.3s, height 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel.left {
+    left: 60px;
+}
+
+.wheel.right {
+    right: 60px;
+}
+
+.rim {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ddd, #777);
+    border: 4px solid #aaa;
+}
+
+/* PREVIEW FOOTER */
+
+.preview-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #6c788a;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* CONTROLS */
+
+.controls {
+    background: #f8f9fc;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.control-heading {
+    margin-bottom: 25px;
+}
+
+.control-heading h2 {
+    color: #243b55;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.control-heading p {
+    color: #8b95a8;
+    font-size: 13px;
+}
+
+/* CONTROL GROUP */
+
+.control-group {
+    margin-bottom: 25px;
+}
+
+.control-group h3 {
+    color: #243b55;
+    font-size: 15px;
+    margin-bottom: 13px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.buttons button {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 9px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* COLOR BUTTONS */
+
+.red {
+    background: #e63946;
+}
+
+.blue {
+    background: #1976d2;
+}
+
+.black {
+    background: #222;
+}
+
+.green {
+    background: #2a9d8f;
+}
+
+.yellow {
+    background: #e9a23b;
+}
+
+/* GLASS BUTTONS */
+
+.light {
+    background: #72cde8;
+    color: #123 !important;
+}
+
+.dark {
+    background: #263238;
+}
+
+.glass-blue {
+    background: #1565c0;
+}
+
+/* TYRE BUTTONS */
+
+.tyre-btn {
+    background: #495057;
+}
+
+/* STATUS */
+
+.status {
+    margin-top: 15px;
+    padding: 16px;
+    background: #e7f4ff;
+    border-left: 4px solid #1976d2;
+    border-radius: 10px;
+    color: #243b55;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.status span {
+    color: #159b67;
+}
+
+/* RESET BUTTON */
+
+.reset-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 13px;
+    background: #243b55;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: #1769e0;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9edf3;
+    color: #8993a8;
+    font-size: 12px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .workshop {
+        padding: 18px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .heading h1 {
+        font-size: 27px;
+    }
+
+    .car {
+        transform: scale(0.85);
+    }
+
+    .car-area {
+        min-height: 280px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .car {
+        transform: scale(0.75);
+    }
+
+    .buttons button {
+        padding: 9px 12px;
+    }
+}

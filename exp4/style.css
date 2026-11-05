@@ -1,0 +1,260 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0f;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background: #15151d;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    color: #d4af37;
+    font-size: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.hero {
+    min-height: 420px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        linear-gradient(120deg, #30250c, #111116);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h2 {
+    color: #d4af37;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #111;
+    padding: 12px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.welcome,
+.training,
+.schedule,
+.contact {
+    padding: 55px 8%;
+    text-align: center;
+}
+
+h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    max-width: 800px;
+    margin: auto;
+    color: #cccccc;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #191922;
+    padding: 30px;
+    border: 1px solid #d4af37;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.card:nth-child(odd) {
+    background: #20202a;
+}
+
+.goal {
+    padding: 55px 8%;
+    text-align: center;
+    background: linear-gradient(120deg, #3b2d0c, #17130a);
+}
+
+.goal h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: #191922;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #d4af37;
+}
+
+th {
+    background: #d4af37;
+    color: #111;
+}
+
+tr:nth-child(even) {
+    background: #24242e;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, button {
+    padding: 13px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #d4af37;
+}
+
+input:valid {
+    border-color: #28a745;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+button {
+    background: #d4af37;
+    color: #111;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+}
+
+footer {
+    background: #15151d;
+    color: #cccccc;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Advanced CSS3 border image demonstration */
+.welcome {
+    border: 5px solid transparent;
+    border-image: linear-gradient(45deg, #d4af37, #fff1a8, #d4af37) 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule {
+        overflow-x: auto;
+    }
+
+    .schedule table {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .welcome,
+    .training,
+    .schedule,
+    .contact {
+        padding: 35px 6%;
+    }
+}

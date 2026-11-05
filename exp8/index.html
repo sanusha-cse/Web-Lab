@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="registrationApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Registration</title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ff;
+    color: #35264d;
+}
+
+header {
+    background: linear-gradient(120deg, #7c3aed, #c084fc);
+    color: white;
+    text-align: center;
+    padding: 28px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+nav {
+    background: #4c1d95;
+    padding: 17px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f5d0fe;
+}
+
+.container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 22px rgba(91, 33, 182, 0.13);
+}
+
+h2 {
+    color: #7c3aed;
+    border-bottom: 2px solid #e9d5ff;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #6d28d9;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fdfaff;
+    color: #35264d;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 6px rgba(139, 92, 246, 0.25);
+}
+
+label {
+    display: block;
+    margin-top: 17px;
+    font-weight: bold;
+    color: #4c1d95;
+}
+
+.gender {
+    display: inline;
+    width: auto;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+button {
+    background: linear-gradient(120deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    margin-top: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(124, 58, 237, 0.25);
+}
+
+button:disabled {
+    background: #c4b5d9;
+    cursor: not-allowed;
+}
+
+.card {
+    background: linear-gradient(120deg, #faf5ff, #f3e8ff);
+    padding: 20px;
+    margin: 16px 0;
+    border-left: 5px solid #a855f7;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(91, 33, 182, 0.06);
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+a {
+    color: #7c3aed;
+}
+
+footer {
+    background: #4c1d95;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .container {
+        margin: 16px;
+        padding: 20px;
+    }
+}
+</style>
+
+<style>
+[ng-cloak] {
+    display: none !important;
+}
+
+.gender-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 18px 0 0;
+}
+
+.gender-option .gender {
+    margin: 0;
+}
+
+.gender-group {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.gender-group legend {
+    margin-top: 17px;
+    color: #4c1d95;
+    font-weight: bold;
+}
+</style>
+
+</head>
+<body ng-controller="RegistrationController" ng-cloak>
+    <header>
+        <h1>Student Registration</h1>
+        <p>Register your details and join our learning community.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#registration">Register</a>
+        <a href="#registrants">Registered students</a>
+    </nav>
+
+    <main class="container">
+        <section id="registration" aria-labelledby="registration-heading">
+            <h2 id="registration-heading">Registration form</h2>
+            <p>Fields marked as required must be completed before registering.</p>
+
+            <form name="studentForm" ng-submit="register(studentForm)" novalidate>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" ng-model="student.name"
+                       required ng-minlength="2" autocomplete="name">
+                <p class="error" ng-show="studentForm.name.$touched && studentForm.name.$error.required">
+                    Please enter your name.
+                </p>
+                <p class="error" ng-show="studentForm.name.$touched && studentForm.name.$error.minlength">
+                    Your name must contain at least 2 characters.
+                </p>
+
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" ng-model="student.email"
+                       required autocomplete="email">
+                <p class="error" ng-show="studentForm.email.$touched && studentForm.email.$error.required">
+                    Please enter your email address.
+                </p>
+                <p class="error" ng-show="studentForm.email.$touched && studentForm.email.$error.email">
+                    Please enter a valid email address.
+                </p>
+
+                <fieldset class="gender-group">
+                    <legend>Gender</legend>
+                    <label class="gender-option">
+                        <input class="gender" type="radio" name="gender" ng-model="student.gender"
+                               value="Female" required>
+                        Female
+                    </label>
+                    <label class="gender-option">
+                        <input class="gender" type="radio" name="gender" ng-model="student.gender"
+                               value="Male" required>
+                        Male
+                    </label>
+                    <label class="gender-option">
+                        <input class="gender" type="radio" name="gender" ng-model="student.gender"
+                               value="Prefer not to say" required>
+                        Prefer not to say
+                    </label>
+                </fieldset>
+                <p class="error" ng-show="studentForm.gender.$touched && studentForm.gender.$error.required">
+                    Please select an option.
+                </p>
+
+                <label for="course">Course</label>
+                <select id="course" name="course" ng-model="student.course" required>
+                    <option value="" disabled>Select a course</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                </select>
+                <p class="error" ng-show="studentForm.course.$touched && studentForm.course.$error.required">
+                    Please select a course.
+                </p>
+
+                <label for="about">About you (optional)</label>
+                <textarea id="about" name="about" ng-model="student.about" rows="4"
+                          placeholder="Tell us a little about yourself"></textarea>
+
+                <button type="submit" ng-disabled="studentForm.$invalid">Register</button>
+            </form>
+        </section>
+
+        <section id="registrants" aria-labelledby="registrants-heading">
+            <h2 id="registrants-heading">Registered students</h2>
+            <p ng-if="students.length === 0">No students have registered yet.</p>
+            <article class="card" ng-repeat="registeredStudent in students track by $index">
+                <h3>{{ registeredStudent.name }}</h3>
+                <p><strong>Email:</strong> {{ registeredStudent.email }}</p>
+                <p><strong>Gender:</strong> {{ registeredStudent.gender }}</p>
+                <p><strong>Course:</strong> {{ registeredStudent.course }}</p>
+                <p ng-if="registeredStudent.about"><strong>About:</strong> {{ registeredStudent.about }}</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Registration</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script>
+        angular.module("registrationApp", [])
+            .controller("RegistrationController", function ($scope) {
+                $scope.student = {};
+                $scope.students = [];
+
+                $scope.register = function (form) {
+                    if (form.$invalid) {
+                        return;
+                    }
+
+                    $scope.students.push(angular.copy($scope.student));
+                    $scope.student = {};
+                    form.$setPristine();
+                    form.$setUntouched();
+                };
+            });
+    </script>
+</body>
+</html>
